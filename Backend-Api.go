@@ -55,7 +55,6 @@ func calculatorHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		calcRes.Ergebnis = calcReq.Zahl1 / calcReq.Zahl2 // Division
 	default:
-
 		// Fehler, wenn die Operation nicht erkannt wird
 		calcRes.Fehlernachricht = "Ungültige Operation"
 		http.Error(w, calcRes.Fehlernachricht, http.StatusBadRequest)
@@ -75,3 +74,4 @@ func main() {
 	fmt.Println("Server startet auf Port 8080...")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
+
